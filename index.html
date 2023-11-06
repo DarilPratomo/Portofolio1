@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Daril</h1>
+        </div>
+        <nav class="dropdown-menu">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#slider">Certificate</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="container">
+        <div id="content">
+            <p class="intro-name">Hi, Im Daril Pratomo Sriramdanu</p>
+            <img src="img/main photo.png" alt="main-photo" width="500px" height="500px">
+            <article>
+                <p>Hai! Saya Daril Pratomo Sriramdanu.<br> Seorang mahasiswa dari UPN Veteran Jakarta yang sedang mengikuti program Bangkit Academy 2023.<br> Saat ini saya sedang fokus belajar HTML, CSS, JavaScript, PHP, dan masih banyak lagi. <br>Saya bermimpi menjadi Full-Stack Developer di sebuah perusahaan besar.</p>
+            </article>
+            <br><br>
+            <h2>My Certificate</h2>
+            <div id="slider">
+                <img src="img/Certificate_Mahir-Membuat-Website-dengan-Laravel_DARIL_page-0001.jpg" alt="Slide 1" class="slide" width="100px">
+                <img src="img/Introduction to Front-End Developer - Meta_page-0001.jpg" alt="Slide 2" class="slide" width="100px">
+                <img src="img/The Complete 2023 Web Development Bootcamp_page-0001.jpg" alt="Slide 2" class="slide" width="100px">
+                <img src="img/Certificate_Mahir-Membuat-Website-dengan-Laravel_DARIL_page-0001.jpg" alt="Slide 1" class="slide" width="100px">
+                <img src="img/The Complete 2023 Web Development Bootcamp_page-0001.jpg" alt="Slide 2" class="slide" width="100px">
+            </div>
+            <button class="prev-btn">&#10094;</button>
+            <button class="next-btn">&#10095;</button>
+        </div>
+        <aside>
+            <h1>About Me</h1>
+            <img src="img/about me photo.jpeg" alt="about-me-photo" width="200px" height="200px">
+            <p>Consistent in learning is the key to success. <br>It's the same with coding, the more you practice,<br> the better you will be at writing code.</p>
+            <h3>Pendidikan</h3>
+            <div>
+                <ul style="list-style-type: none;">
+                    <li>SDN Muncul 2</li>
+                    <li>SMP Al-Amanah</li>
+                    <li>SMAN 1 Gunungsindur</li>
+                    <li>Universitas Pembangunan Nasional Veteran Jakarta</li>
+                </ul>
+            </div>
+            <h3>Skill</h3>
+            <div>
+                <ul style="list-style-type: none;">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>PHP</li>
+                </ul>
+            </div>
+            <h3>Hobby</h3>
+            <div>
+                <ul style="list-style-type: none;">
+                    <li>Listen Music</li>
+                    <li>Playing Football</li>
+                    <li>Coding</li>
+                </ul>
+            </div>
+            <h3>Contact</h3>
+            <div>
+                <ul style="list-style-type: none;">
+                    <li>Call: 08881549762</li>
+                    <li>Email: daril@gmail.com</li>
+                    <li>Location: Jakarta</li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+    <footer>
+        <p>Copyright &#169; 2023 Daril Pratomo Sriramdanu. All right reserved</p>
+    </footer>
+    <script>
+        // Membuat bagian slider agar bisa di previous/next
+        document.addEventListener("DOMContentLoaded", function () {
+            const slider = document.querySelector(".slider");
+            const slides = document.querySelectorAll(".slide");
+            const prevBtn = document.querySelector(".prev-btn");
+            const nextBtn = document.querySelector(".next-btn");
+
+            let currentIndex = 0;
+
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.style.transform = `translateX(${100 * (i - index)}%)`;
+                });
+            }
+
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                showSlide(currentIndex);
+            }
+
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % slides.length;
+                showSlide(currentIndex);
+            }
+
+            prevBtn.addEventListener("click", prevSlide);
+            nextBtn.addEventListener("click", nextSlide);
+
+            // Autoplay
+            setInterval(nextSlide, 5000); // Ganti slide setiap 5 detik
+        });
+    </script>
+</body>
+</html>

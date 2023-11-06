@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+/* Reset default margin and padding */
+body, ul, li {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Style the header navigation */
+header {
+  background-color: #243042;
+  color: #fff;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between; /* Pusatkan horizontal untuk desktop */
+  align-items: center; /* Pusatkan vertikal */
+  text-align: center; /* Pusatkan teks pada perangkat mobile */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center; /* Mengatur tautan ke tengah */
+}
+
+nav li {
+  margin-right: 20px; /* Menambahkan jarak antara tautan */
+}
+
+nav a {
+  text-decoration: none;
+  color: white; /* Warna tautan */
+  padding: 5px 10px; /* Ruang dalam setiap tautan */
+  border-radius: 5px; /* Membuat sudut tautan sedikit melengkung */
+  transition: background-color 0.3s, color 0.3s; /* Animasi perubahan warna saat dihover */
+}
+
+nav a:hover {
+  background-color: #007BFF; /* Warna latar belakang saat dihover */
+  color: #fff; /* Warna teks saat dihover */
+}
+
+/* Style the main content container */
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+main {
+  flex: 1;
+}
+
+/* Style the main content */
+#content {
+  text-align: center;
+  padding: 20px;
+}
+
+.intro-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Style the aside (education section) */
+aside {
+  background-color: #ffffff;
+  padding: 20px;
+  width: 30%;
+}
+
+h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* Style the footer */
+footer {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+}
+
+
+/* Additional styles for links */
+a {
+  color: #007BFF;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+img {
+    border-radius: 20px;
+    max-width: 100%; /* Responsifkan gambar agar tidak melebihi lebar layar */
+    height: auto; /* Pertahankan aspek gambar */
+}
+/* Style untuk tanda panah ke bawah */
+.arrow-down {
+    display: inline-block;
+    margin-left: 5px; /* Jarak antara teks dan tanda panah */
+    transition: transform 0.3s; /* Animasi perubahan transformasi saat submenu terbuka */
+}
+
+/* Putar tanda panah ke bawah ketika submenu terbuka */
+.dropdown-menu.show .arrow-down {
+    transform: rotate(180deg);
+}
+/* CSS untuk menyembunyikan submenu secara default */
+/* Mengatur jarak antara submenu dan tautan "About" */
+.submenu {
+    display: none;
+    list-style: none;
+    margin-top: 10px; /* Menambahkan jarak di atas submenu */
+}
+/* Style untuk slider */
+#slider {
+    display: flex;
+    overflow: hidden;
+}
+.logo {
+  margin-left: 20px; /* Geser logo ke kiri */
+}
+
+.slide {
+    flex: 0 0 calc(33.33% - 20px); /* Membagi slider menjadi 3 kolom dengan jarak 20px di antara mereka */
+    transition: transform 0.5s ease-in-out;
+
+}
+
+/* Hapus margin kanan dari slide terakhir */
+.slide:last-child {
+    margin-right: 0;
+}
+
+.prev-btn, .next-btn {
+    background-color: #243042;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 24px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background-color: #0056b3;
+}
+
+
+
+/* CSS untuk layar berukuran kecil (misalnya, perangkat mobile) */
+@media (max-width: 768px) {
+  header {
+    padding: 10px 0;
+  }
+
+  .container {
+    flex-direction: column; /* Konten dan aside ditumpuk di bawah satu sama lain */
+  }
+
+  aside {
+    width: 100%; /* Mengisi seluruh lebar layar pada perangkat mobile */
+  }
+
+  /* Tambahan: Menyesuaikan ukuran font pada perangkat mobile */
+  .intro-name {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+  
+}
